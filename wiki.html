@@ -1,0 +1,52 @@
+<head>
+  <title>QuickWiki</title>
+</head>
+
+<body>
+	{{> main}}
+</body>
+
+<template name="main">
+  	<div class="site-wrapper">
+	  <div class="site-wrapper-inner">
+	    <div class="cover-container">
+	      <div class="masthead clearfix">
+	        <div class="inner">
+	          <h3 class="masthead-brand">QuickWiki</h3>
+	        </div>
+	      </div>
+
+	      <div class="inner cover">
+	        <h1 class="cover-heading">Get a brief summary of any Wikipedia topic</h1>
+	        <p class="lead">It is easy, just write the topic, and submit. You will get a brief summary about the topic!</p>
+	        <p class="lead">
+	          
+	        </p>
+	      </div>
+	      {{> mainInput}}
+	      {{> mainContent}}
+	      <div class="mastfoot">
+	        <div class="inner">
+	          <p><a href="https://twitter.com/alioh">@alioh</a></p>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</template>
+
+<template name="mainInput">
+	<form class="form-inline">
+		<div class="form-group">
+		  <input type="text" class="form-control" id="topicInput" placeholder="Pick a topic">
+		</div>
+		<button type="button" id="topicButton" class="btn btn-default">Get summary</button>
+	</form>
+</template>
+
+<template name="mainContent">
+	<div class="inner cover">
+		<h1 class="cover-heading">{{summary}}</h1>
+	</div>
+	
+</template>
