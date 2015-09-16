@@ -43,11 +43,14 @@
 </template>
 
 <template name="mainContent">
-	<div class="cover-container">
-		<h3>
-			{{summary.title}}
-		</h3>
+	<h3>
+		<a href="http://www.wikiwand.com/en/{{summary.title}}">{{summary.title}}</a>
+	</h3>
+	<p>
+		<a href="{{summary.imageurl}}"><img src="{{summary.imageurl}}" class="img-circle" width="40%" height="40%" align="left"></a>
+	</p>
+	<p>
 		{{summary.summ}}
-	</div>
-	
+	</p>
+	<br><br>
 </template>
