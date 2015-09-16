@@ -7,13 +7,11 @@
 </body>
 
 <template name="main">
+<p class="navbar-text"><h4>QuickWiki</h4></p>
   	<div class="site-wrapper">
 	  <div class="site-wrapper-inner">
 	    <div class="cover-container">
 	      <div class="masthead clearfix">
-	        <div class="inner">
-	          <h3 class="masthead-brand">QuickWiki</h3>
-	        </div>
 	      </div>
 
 	      <div class="inner cover">
@@ -25,14 +23,14 @@
 	      </div>
 	      {{> mainInput}}
 	      {{> mainContent}}
-	      <div class="mastfoot">
-	        <div class="inner">
-	          <p><a href="https://twitter.com/alioh">@alioh</a></p>
-	        </div>
-	      </div>
 	    </div>
 	  </div>
 	</div>
+<div class="footer">
+	<div class="container">
+		<p class="text-muted"><a href="https://twitter.com/alioh">@alioh</a></p>
+	</div>
+</div>
 </template>
 
 <template name="mainInput">
@@ -45,8 +43,11 @@
 </template>
 
 <template name="mainContent">
-	<div class="inner cover">
-		<h1 class="cover-heading">{{summary}}</h1>
+	<div class="cover-container">
+		<h3>
+			{{summary.title}}
+		</h3>
+		{{summary.summ}}
 	</div>
 	
 </template>

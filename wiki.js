@@ -1,11 +1,12 @@
+
 if (Meteor.isClient) {
   Template.mainContent.helpers({
     summary: function () {
-      Meteor.call('wiki', function (error, result) {
-        Session.set("test", result);
-      });
-      var maintopic = Session.get(test);
-      return maintopic;
+      var data = {
+        title: Session.get("title"),
+        summ: Session.get("summ") || "You didn't pick a topic yet!"
+      }
+      return data;
     }
   });
 
@@ -13,20 +14,21 @@ if (Meteor.isClient) {
     'click #topicButton': function (e) {
       e.preventDefault();
       var topic = $('#topicInput').val();
+      var language = "en"
       Session.set("test", topic);
-      
+      var summary = Meteor.call("wiki", topic, language);
+      Meteor.call('wiki', topic, function (error, result) {
+       Session.set("summ", result.summary);
+       Session.set("title", result.title);
+      });
       $('#topicInput').val('');
     }
   });
 }
 
-if (Meteor.isServer) {
-  Meteor.startup(function() {
-    Meteor.methods({
-        wiki: function() {
-            var wikiTest = Scrape.wikipedia 'avengers', 'en', ['film']
-            return wikiTest;
-        },
-    });
-  });
-}
+Meteor.methods({
+    wiki: function(topic, language) {
+        var wikiTest = Scrape.wikipedia(topic, language);
+        return wikiTest;
+    },
+});
