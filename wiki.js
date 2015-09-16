@@ -4,6 +4,7 @@ if (Meteor.isClient) {
       Meteor.call('wiki', function (error, result) {
         Session.set("test", result);
       });
+      var maintopic = Session.get(test);
       return maintopic;
     }
   });
