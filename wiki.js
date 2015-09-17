@@ -10,22 +10,26 @@ if (Meteor.isClient) {
         imageurl: Session.get("imageurl")
       }
       return data;
-    }
+      }
   });
 
   Template.mainInput.events({
     'click #topicButton': function (e) {
-      if ((e.type === 'click') || (e.type === 'keyup' && e.which === 13) ) {
-        var topic = $('#topicInput').val();
-        var language = "en";
-        var summary = Meteor.call("wiki", topic, language);
-        Meteor.call('wiki', topic, function (error, result) {
-         Session.set("summ", result.summary);
-         Session.set("title", result.title);
-         Session.set("imageurl", result.image.url)
-        });
-        $('#topicInput').val('');
+      var topic = $('#topicInput').val();
+      var language = "en";
+      var summary = Meteor.call("wiki", topic, language);
+      Meteor.call('wiki', topic, function (error, result) {
+        if ( _.isEmpty(result)) {
+        Session.set("title", "Not found");
+        Session.set("summ", "");
+        Session.set("imageurl", "/images/notfound.png")
+      } else {
+        Session.set("summ", result.summary);
+        Session.set("title", result.title);
+        Session.set("imageurl", result.image.url)
       }
+      });
+      $('#topicInput').val('');
     }
   });
 }
