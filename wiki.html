@@ -7,31 +7,24 @@
 </body>
 
 <template name="main">
-<p class="navbar-text"><h4>QuickWiki</h4></p>
   	<div class="site-wrapper">
-	  <div class="site-wrapper-inner">
-	    <div class="cover-container">
-	      <div class="masthead clearfix">
-	      </div>
-
-	      <div class="inner cover">
-	        <h1 class="cover-heading">Get a brief summary of any Wikipedia topic</h1>
-	        <p class="lead">It is easy, just write the topic, and submit. You will get a brief summary about the topic!</p>
-	        <p class="lead">
-	          
-	        </p>
-	      </div>
-	      {{> mainInput}}
-	      {{> mainContent}}
-	    </div>
-	  </div>
+		  <div class="site-wrapper-inner">
+		    <div class="cover-container">
+		      <div class="masthead clearfix">
+		      {{> navbar }}
+		      </div>
+		      <div class="inner cover">
+		        <h1 class="cover-heading">Get a brief summary about anything!</h1>
+		        It is easy, just write the topic, and click "Get summary". You will get back a brief summary about the topic from Wikipedia
+		        <p class="lead">
+		          
+		        </p>
+		      </div>
+		      {{> mainInput}}
+		      {{> mainContent}}
+		    </div>
+		  </div>
 	</div>
-<div class="footer">
-	<div class="container">
-		<a href="https://github.com/alioh/QuickWiki"><img src="GitHub-Mark-Light-32px.png"></a>
-		<a href="https://twitter.com/alioh"><img src="twitter-icon.png"></a>
-	</div>
-</div>
 </template>
 
 <template name="mainInput">
@@ -54,4 +47,16 @@
 		{{summary.summ}}
 	</p>
 	<br><br>
+</template>
+
+<template name="navbar">
+	<div class="inner">
+		<h3 class="masthead-brand">QuickWiki</h3>
+		<nav>
+		  <ul class="nav masthead-nav">
+		    <li><a href="https://github.com/alioh/QuickWiki"><img src="GitHub-Mark-Light-32px.png"></a></li>
+		    <li><a href="https://twitter.com/alioh"><img src="twitter-icon.png"></a></li>
+		  </ul>
+		</nav>
+	</div>			    
 </template>
