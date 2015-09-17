@@ -7,24 +7,23 @@
 </body>
 
 <template name="main">
-  	<div class="site-wrapper">
-		  <div class="site-wrapper-inner">
-		    <div class="cover-container">
-		      <div class="masthead clearfix">
-		      {{> navbar }}
-		      </div>
-		      <div class="inner cover">
-		        <h1 class="cover-heading">Get a brief summary about anything!</h1>
-		        It is easy, just write the topic, and click "Get summary". You will get back a brief summary about the topic from Wikipedia
-		        <p class="lead">
-		          
-		        </p>
-		      </div>
-		      {{> mainInput}}
-		      {{> mainContent}}
+	<div class="site-wrapper">
+	  <div class="site-wrapper-inner">
+	    <div class="cover-container">
+		    <div class="navbar navbar-masthead">
+		    	{{> navbar }}
 		    </div>
-		  </div>
-	</div>
+	      <div class="inner cover">
+	        <h1 class="cover-heading">Get a brief summary about anything!</h1>
+	        It is easy, just write the topic, and click "Get summary". You will get back a brief summary about the topic from Wikipedia
+	        <p class="lead">
+	        </p>
+	      </div>
+	      {{> mainInput}}
+	      {{> mainContent}}
+	    </div>
+	  </div>
+</div>
 </template>
 
 <template name="mainInput">
@@ -50,13 +49,17 @@
 </template>
 
 <template name="navbar">
-	<div class="inner">
-		<h3 class="masthead-brand">QuickWiki</h3>
-		<nav>
-		  <ul class="nav masthead-nav">
-		    <li><a href="https://github.com/alioh/QuickWiki"><img src="GitHub-Mark-Light-32px.png"></a></li>
-		    <li><a href="https://twitter.com/alioh"><img src="twitter-icon.png"></a></li>
-		  </ul>
-		</nav>
-	</div>			    
+	<nav class="navbar navbar-custom">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<h4 class="masthead-brand">QuickWiki</h4>
+			</div>
+			<div>
+			  <ul class="nav masthead-nav">
+			    <li><a href="https://github.com/alioh/QuickWiki"><img src="GitHub-Mark-Light-32px.png"></a></li>
+			    <li><a href="https://twitter.com/alioh"><img src="twitter-icon.png"></a></li>
+			  </ul>
+		  </div>
+	  </div>
+	</nav>
 </template>
