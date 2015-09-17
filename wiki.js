@@ -22,7 +22,7 @@ if (Meteor.isClient) {
         if ( _.isEmpty(result)) {
         Session.set("title", "Not found");
         Session.set("summ", "");
-        Session.set("imageurl", "/images/notfound.png")
+        Session.set("imageurl", "/notfound.png")
       } else {
         Session.set("summ", result.summary);
         Session.set("title", result.title);
