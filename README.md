@@ -1,2 +1,3 @@
-# Quick Wiki
-- Meteor.js, type a topic, click get summary and you will get a quick summary from Wikipedia about that topic.
+# QuickWiki
+- Built with Meteor.js
+- Live demo: http://quickwiki.meteor.com
